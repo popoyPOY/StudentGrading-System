@@ -8,7 +8,7 @@ def Database():
     conn = sqlite3.connect('Database.db')
     
     conn.execute('''
-        CREATE TABLE student (stud_id INT PRIMARY KEY AUTOINCREMENT NOT NULL,
+        CREATE TABLE student (stud_id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
                               studno INT,
                               studname TEXT,
                               course TEXT,
