@@ -1,3 +1,5 @@
+from email import message
+from re import S
 from tkinter import messagebox
 import sqlite3
 
@@ -7,9 +9,9 @@ DATABASE = "Database.db" #student Table
 database = sqlite3.connect(DATABASE)
 
 class Student:
-    def __init__(self):
-        self.stud_id = None
-    
+    def __init__(self, stud_id, studentName):
+        self.stud_id = stud_id,
+        self.studentName = studentName
 
     def createStudent(self, studentNo, StudentName, studentCourse, 
                     studentSubject, studentPrilem, studentMidterm,
@@ -47,11 +49,24 @@ class Student:
                     try:
                         database.execute(sql, value)
                         database.commit()
-                        messagebox.showinfo(title="Sucess", message="Done!")
                         database.close()
+                        return True
                     except Exception as e:
+                        messagebox.showerror(title="Error", message="Please Review Your Input")
                         print(e)
                         database.close()
+    
+    def deleteStudent(self):
+        try:
+            sql = "DELETE FROM student WHERE stud_id = ?"
+            value = (self.stud_id)
+            database.execute(sql, value)
+            database.commit()
+            database.close()
+            messagebox.showinfo(title="Success", message="Student Data successfully deleted!")
+        except Exception as e:
+            database.close()
+            print(e)
 
 
 
