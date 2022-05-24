@@ -5,6 +5,8 @@ DATABASE = "Database.db" #student Table
 
 database = sqlite3.connect(DATABASE)
 
+cursor = database.cursor()
+
 class Student:
     def __init__(self, stud_id):
         self.stud_id = stud_id
@@ -65,6 +67,17 @@ class Student:
             database.close()
             print(e)
 
+    def searchStudent(self, studentNumber):
+        try:
+            sql = "SELECT * from student where studno = ?"
+            value = (int(studentNumber),)
+            cursor.execute(sql, value)
+            
+            #return a list
+            return cursor.fetchall()
+        except Exception as e:
+            database.close()
+            print(e)
 
 
 
