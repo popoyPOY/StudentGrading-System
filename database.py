@@ -9,7 +9,7 @@ def Database():
     
     conn.execute('''
         CREATE TABLE student (stud_id INT PRIMARY KEY NOT NULL,
-                              stuno INT,
+                              studno INT,
                               studname TEXT,
                               course TEXT,
                               subject TEXT,
