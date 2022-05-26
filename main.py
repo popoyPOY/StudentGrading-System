@@ -1,11 +1,8 @@
-from email import message
-from re import L
 from tkinter import *
 from tkinter import font
 
 from tkinter.ttk import Combobox, Style
 from tkinter.ttk import Treeview
-from turtle import bgcolor
 
 from app import Student
 from tkinter import messagebox
@@ -205,13 +202,13 @@ class studenGUI(Tk):
         crudButton = Frame(window, bg=self.bgcolor)
         crudButton.pack()
 
-        saveButton = Button(crudButton, text="Save Student", command=self.createStudent, fg="#B4FF9F", bg="#00FFAB", font=('Calibri', 15))
+        saveButton = Button(crudButton, text="Save Student", command=self.createStudent, fg="#383838", bg="#00FFAB", font=('Calibri bold', 15))
         saveButton.grid(padx=10, pady=10, row=1,column=1)
 
-        updateButton = Button(crudButton, text="Update Student", command=self.updateStudent, fg="#B4FF9F", bg="#242F9B", font=('Calibri', 15))
+        updateButton = Button(crudButton, text="Update Student", command=self.updateStudent, fg="#B4FF9F", bg="#242F9B", font=('Calibri bold', 15))
         updateButton.grid(padx=10, pady=10,row=1, column=2)
 
-        deleteButton = Button(crudButton, text="Delete Student", command=self.deleteStudent, fg="#B4FF9F", bg="#FF5D5D", font=('Calibri', 15))
+        deleteButton = Button(crudButton, text="Delete Student", command=self.deleteStudent, fg="#B4FF9F", bg="#FF5D5D", font=('Calibri bold', 15))
         deleteButton.grid(padx=10, pady=10, row=1, column=3)
 
         self.displayData()
@@ -291,7 +288,12 @@ class studenGUI(Tk):
         if self.NAME.get() == "" or self.GENDER.get() == "" or self.COURSE.get() == "" or self.COURSE.get() == "" or self.SUBJECT.get() == "" or self.PRILEM.get() == "" or self.MIDTERM.get() == "" or self.FINAL.get() == "":
             messagebox.showerror(message="Please Fill the form", title="Please Try Again")
         else:
-            
+            f = self.listbox.focus()
+            content = (self.listbox.item(f))
+            selecteditem = content['values']
+            self.stud_id = selecteditem[0]
+            row_id = self.listbox.selection()[0]
+            self.setlist = self.listbox.set(row_id)
             if self.studentNoEntry.get() == self.setlist['1']:
                 messagebox.showerror(message="Student Already Exist", title="Student Existed, please change the Student Number")
             else:
