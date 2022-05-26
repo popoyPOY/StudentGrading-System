@@ -11,6 +11,7 @@ def Database():
         CREATE TABLE student (stud_id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
                               studno INT,
                               studname TEXT,
+                              studentgen TEXT,
                               course TEXT,
                               subject TEXT,
                               prelim_grade INT,
