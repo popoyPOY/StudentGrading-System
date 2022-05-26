@@ -25,3 +25,16 @@ def Database():
     conn.close()
 
 Database()
+
+
+def Database2():
+    global conn, cursor 
+    
+    conn = sqlite3.connect('Database.db')
+    
+    conn.execute('''
+        CREATE TABLE users (stud_id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, username TEXT, password TEXT)''')
+    conn.commit()
+    conn.close()
+
+Database2()

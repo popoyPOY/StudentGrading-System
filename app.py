@@ -79,7 +79,33 @@ class Student:
             database.close()
             print(e)
 
+    @staticmethod
+    def createAccount(username, password):
+        try:
+            sql = "INSERT INTO users (username, password) VALUES (?, ?)"
+            value = (username, password,)
+
+            database.execute(sql, value)
+            database.commit()
+            database.close()
+        
+        except Exception as e:
+            print(e)
+    
+    @staticmethod
+    def loginAccount(username, password):
+        if username == '' and password == '':
+            messagebox.showerror(title="Please Try Againa", message="Please fill the Form")
+        else:
+            conn = database.execute("SELECT * from users WHERE username = ? AND password = ?", (username, password,))
+            if conn.fetchone():
+                return True
+            else:
+                messagebox.showerror(title="Invalid Login", message="Invalid username or password")
 
 
+
+#student = Student(0)
+#student.createAccount("admin", "admin")
                     
 
