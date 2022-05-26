@@ -108,7 +108,7 @@ class studenGUI(Tk):
         self.searchFrame = Frame(window, bg=self.bgcolor)
         self.searchFrame.pack()
 
-        self.searchlbl = Label(self.searchFrame, text="Search Student:", bg=self.bgcolor,  font=('Calibri bold', 15))
+        self.searchlbl = Label(self.searchFrame, text="Search Student:", bg=self.bgcolor,  font=('Calibri bold', 15), fg="#0AA1DD")
         self.searchlbl.grid(row=1, column=1, padx=10, pady=10)
 
         self.searchEntry = Entry(self.searchFrame, width=20, font=('Calibri bold', 15))
@@ -126,31 +126,31 @@ class studenGUI(Tk):
         self.entryFrames = Frame(parentFrame, bg=self.bgcolor)
         self.entryFrames.grid(row=1, column=1)
 
-        studentNolabel = Label(self.entryFrames, text="Student Number", font=('Calibri bold', 15), bg=self.bgcolor)
+        studentNolabel = Label(self.entryFrames, text="Student Number", font=('Calibri bold', 15), bg=self.bgcolor, fg="#3BACB6")
         studentNolabel.grid(row = 1)
 
         self.studentNoEntry = Entry(self.entryFrames, width=20, font=('Calibri bold', 13), textvariable=self.NUMBER)
         self.studentNoEntry.grid(row=2)
 
-        studentNameLabel = Label(self.entryFrames, text="Student Name", font=('Calibri bold', 15), bg=self.bgcolor)
+        studentNameLabel = Label(self.entryFrames, text="Student Name", font=('Calibri bold', 15), bg=self.bgcolor, fg="#3BACB6")
         studentNameLabel.grid(row = 3)
 
         self.studentnameEntry = Entry(self.entryFrames, width=20, font=('Calibri bold', 13), textvariable=self.NAME)
         self.studentnameEntry.grid(row=4)
 
-        self.studentGenderLabel = Label(self.entryFrames, text="Student Gender", font=('Calibri bold', 15), bg=self.bgcolor)
+        self.studentGenderLabel = Label(self.entryFrames, text="Student Gender", font=('Calibri bold', 15), bg=self.bgcolor, fg="#3BACB6")
         self.studentGenderLabel.grid(row = 5)
 
         self.studentGenderEntry = Combobox(self.entryFrames, width=20, font=('Calibri bold', 12), values=['Female', 'Male'], textvariable=self.GENDER)
         self.studentGenderEntry.grid(row=6)
 
-        studentCourseLabel = Label(self.entryFrames, text="Student Course", font=('Calibri bold', 15), bg=self.bgcolor)
+        studentCourseLabel = Label(self.entryFrames, text="Student Course", font=('Calibri bold', 15), bg=self.bgcolor, fg="#3BACB6")
         studentCourseLabel.grid(row =7)
 
         self.studentCourseEntry = Combobox(self.entryFrames, width=20, font=('Calibri bold', 12), values=['BS Information Technology', 'Data Science', 'Computer Engineering', 'Civil Engineering'], textvariable=self.COURSE)
         self.studentCourseEntry.grid(row=8)
 
-        studentSubjectLabel = Label(self.entryFrames, text="Student Subject", font=('Calibri bold', 15), bg=self.bgcolor)
+        studentSubjectLabel = Label(self.entryFrames, text="Student Subject", font=('Calibri bold', 15), bg=self.bgcolor, fg="#3BACB6")
         studentSubjectLabel.grid(row = 9)
 
         self.studentSubjectEntry = Entry(self.entryFrames, width=20, font=('Calibri bold', 13), textvariable=self.SUBJECT)
@@ -163,37 +163,37 @@ class studenGUI(Tk):
         self.studentGrade.grid(row=1, column=2)
         #colum 2
 
-        studentPrelimLabel = Label(self.studentGrade, text="Student Prelim", font=('Calibri bold', 15), bg=self.bgcolor)
+        studentPrelimLabel = Label(self.studentGrade, text="Student Prelim", font=('Calibri bold', 15), bg=self.bgcolor, fg="#3BACB6")
         studentPrelimLabel.grid(row = 1)
 
         self.studentPrelimEntry = Entry(self.studentGrade, width=20, font=('Calibri bold', 13), textvariable=self.PRILEM)
         self.studentPrelimEntry.grid(row=2)
 
-        studentMidtermlabel = Label(self.studentGrade, text="Student MidTerm", font=('Calibri bold', 15), bg=self.bgcolor)
+        studentMidtermlabel = Label(self.studentGrade, text="Student MidTerm", font=('Calibri bold', 15), bg=self.bgcolor, fg="#3BACB6")
         studentMidtermlabel.grid(row = 3)
 
         self.studentMidtermEntry = Entry(self.studentGrade, width=20, font=('Calibri bold', 13), textvariable=self.MIDTERM)
         self.studentMidtermEntry.grid(row=4)
 
-        studentFinallabel = Label(self.studentGrade, text="Student Final", font=('Calibri bold', 15), bg=self.bgcolor)
+        studentFinallabel = Label(self.studentGrade, text="Student Final", font=('Calibri bold', 15), bg=self.bgcolor, fg="#3BACB6")
         studentFinallabel.grid(row = 5)
 
         self.studentFinalEntry = Entry(self.studentGrade, width=20, font=('Calibri bold', 13), textvariable=self.FINAL)
         self.studentFinalEntry.grid(row=6)
 
-        studentAveragelabel = Label(self.studentGrade, text="Student Average",font=('Calibri bold', 15), bg=self.bgcolor)
+        studentAveragelabel = Label(self.studentGrade, text="Student Average",font=('Calibri bold', 15), bg=self.bgcolor, fg="#3BACB6")
         studentAveragelabel.grid(row = 7)
 
         self.studentAverageEntry = Entry(self.studentGrade, width=20, font=('Calibri bold', 13), textvariable=self.AVERAGE, state="disabled")
         self.studentAverageEntry.grid(row=8)
 
-        studentRemarklabel = Label(self.studentGrade, text="Student Remark", font=('Calibri bold', 15), bg=self.bgcolor)
+        studentRemarklabel = Label(self.studentGrade, text="Student Remark", font=('Calibri bold', 15), bg=self.bgcolor, fg="#3BACB6")
         studentRemarklabel.grid(row = 9)  
 
         self.studentRemarkEntry = Entry(self.studentGrade, width=20, font=('Calibri bold', 13), state="disabled",textvariable=self.REMARK)
         self.studentRemarkEntry.grid(row=10)
 
-        studentpoinEquivalentLabel = Label(self.studentGrade, text="Student Point Equivalent", font=('Calibri bold', 15), bg=self.bgcolor)
+        studentpoinEquivalentLabel = Label(self.studentGrade, text="Student Point Equivalent", font=('Calibri bold', 15), bg=self.bgcolor, fg="#3BACB6")
         studentpoinEquivalentLabel.grid(row = 1, column=2)
 
         self.studentpoinEquivalentEntry = Entry(self.studentGrade, width=20, font=('Calibri bold', 13), state="disabled", textvariable=self.PE)
@@ -205,13 +205,13 @@ class studenGUI(Tk):
         crudButton = Frame(window, bg=self.bgcolor)
         crudButton.pack()
 
-        saveButton = Button(crudButton, text="Save Student", command=self.createStudent, fg=self.bgcolor, bg="#00FFAB", font=('Calibri', 15))
+        saveButton = Button(crudButton, text="Save Student", command=self.createStudent, fg="#B4FF9F", bg="#00FFAB", font=('Calibri', 15))
         saveButton.grid(padx=10, pady=10, row=1,column=1)
 
-        updateButton = Button(crudButton, text="Update Student", command=self.updateStudent, fg=self.bgcolor, bg="#242F9B", font=('Calibri', 15))
+        updateButton = Button(crudButton, text="Update Student", command=self.updateStudent, fg="#B4FF9F", bg="#242F9B", font=('Calibri', 15))
         updateButton.grid(padx=10, pady=10,row=1, column=2)
 
-        deleteButton = Button(crudButton, text="Delete Student", command=self.deleteStudent, fg=self.bgcolor, bg="#FF5D5D", font=('Calibri', 15))
+        deleteButton = Button(crudButton, text="Delete Student", command=self.deleteStudent, fg="#B4FF9F", bg="#FF5D5D", font=('Calibri', 15))
         deleteButton.grid(padx=10, pady=10, row=1, column=3)
 
         self.displayData()
@@ -231,7 +231,7 @@ class studenGUI(Tk):
             content = (self.listbox.item(f))
             selecteditem = content['values']
             self.stud_id = selecteditem[0]
-            print(self.stud_id)
+            #print(self.stud_id)
 
             self.studentRemarkEntry.config(state="normal")
             self.studentpoinEquivalentEntry.config(state="normal")
@@ -358,14 +358,20 @@ class studenGUI(Tk):
         
     def updateStudent(self):
         try:
-            update = self.student.updateStudent(self.NUMBER.get(), self.NAME.get(),self.GENDER.get(),self.COURSE.get(),self.SUBJECT.get(),self.PRILEM.get(),self.MIDTERM.get(),self.FINAL.get(), self.AVERAGE.get(),self.REMARK.get(),self.PE.get(),self.stud_id)
+            avg =(self.PRILEM.get() + self.MIDTERM.get() + self.FINAL.get()) / 3
+
+            average = round(avg, 2)
+
+            pe = self.pointeq(average=average)
+            remarks = self.remarks(pe)
+            update = self.student.updateStudent(self.NUMBER.get(), self.NAME.get(),self.GENDER.get(),self.COURSE.get(),self.SUBJECT.get(),self.PRILEM.get(),self.MIDTERM.get(),self.FINAL.get(), average,remarks,pe,self.stud_id)
 
             if update:
                 messagebox.showinfo(message="Successfully Update", title="Successfully Update Student Information!")
             else:
                 messagebox.showerror(message="Please Try Again", title="Please Try Again")
         except Exception as e:
-            raise e
+            messagebox.showerror(message="Please try again. Double Check the data", title="Double Check the data")
         self.clearData()
         self.displayData()
     
@@ -375,7 +381,7 @@ class studenGUI(Tk):
             if delete:
                 messagebox.showinfo(message="Erased Data!",title="Successfully Erased")
         except Exception as e:
-            raise e
+            messagebox.showerror(message="Please try again. Double Check the data", title="Double Check the data")
         self.clearData()
         self.displayData()
     
